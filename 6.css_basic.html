@@ -26,6 +26,14 @@
         .smailltext {
             font-size: 10px;
         }
+
+        #vwvh {
+            /* 높이에 대해 1% */
+            font-size: 5vh;
+
+            /* 너비에 대한 1% */
+            /* font-size: 5vw; */
+        }
     </style>
 </head>
 <body>
@@ -36,6 +44,43 @@
     <p>중첩 클래스 선택자 적용</p>
     <p class="italic bigtext">클래스 선택자 적용 : font style과 font size 중첩적용1</p>
     <p class="italic smalltext">클래스 선택자 적용 : font style과 font size 중첩적용2</p>
+
+    <p style = "font-family: Georgia, 'Times New Roman', Times, serif;">form styles</p>
+
+    
+    <!-- em : 부모요소에 대해 배수, percent : 부모요소에 대한 퍼센트 -->
+    <div style = "font-size : 20px;">
+        이 텍스트는 부모 텍스트 입니다.
+        <div style="font-size : 1.5em;">이 텍스트는 부모 글꼴의 1.5배</div>
+    </div>
+
+    <div style="font-size : 20px;">
+        이 텍스트는 부모 텍스트 입니다. 
+        <div style="font-size : 150%;">이 텍스트는 자식 텍스트 입니다.</div>
+    </div>
+
+    <div id="vwvh">vw, vh을 적용한 글꼴 크기 입니다.</div>
+
+    <div style = " border : 5px solid #000; width:400px; height: 200px; margin: auto; padding: 50px; text-align: center; place-content: center;">
+        margin, border, padding 을 가진 요소
+    </div>
+
+
+    <table border="1" style="border-collapse: collapse; text-align: center; margin: auto;">
+        <caption><strong>TABLE</strong></caption>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>제목1</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
