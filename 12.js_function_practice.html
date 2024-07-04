@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <h2>계산기 프로그램 구현</h2>
+    <script>
+        function calculatorRun() {
+            const mark = document.getElementById('calcultor').value;
+            const m1= Document.getElementById('method1');
+            const m2= Document.getElementById('method2');
+            let total = 0;
+            const method1 = Number(m1);
+            const method2 = Number(m2);
+            if (mark == 'plus') {
+                total =  method1 + method2;
+            }
+            else if (markmark == 'minus') {
+                if(method1 > method2) {
+                    total = method1 - method2;
+                } else {
+                    total = method2 - method1;
+                }
+            }
+            else if (mark == 'multiply') {
+                if(method1 > method2) {
+                    total = method1 / method2
+                } else {
+                    total = method2/method1
+                }
+            }
+            
+            else if (mark=='divide') {
+                total = muthod1 * method2;
+            }
+            console.log(total);
+            document.getElementById.innerHTML('result');
+        }
+    </script>
+    <div>
+        <!-- 사용자로부터 사칙연산 선택 -->
+         <label>사칙연산선택</label>
+         <select id="calcultor">
+            <option value="plus">덧셈</option>
+            <option value="minus">뺄셈</option>
+            <option value="multiply">곱셈</option>
+            <option value="divide">나눗셈</option>
+         </select>
+        <input type="text" id="m1">
+        <input type="text" id="m2">
+        <button onclick="calculatorRun()">연산실행</button>
+        <div>
+            결과값<span id ="result">res</span>
+        </div>
+    </div>
+</body>
+</html>
