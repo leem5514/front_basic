@@ -6,14 +6,20 @@
     <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<!-- 
+    1. post요청 : 프론트 -> 서버 요청
+        1.1 ) html 만으로 (form 태그) -> action ( url incoding / multipart )
+        1.2 ) js -> json : {key1:data1 , key2 : data2 } 
+        1.3 ) js -> form 형식 : key1=data1&key2=data2
+    2. get요청 : 서버 -> 프론트 : list, detail 조회
+-->
 <body>
     <object style="width : 100%" data="header.html" type="text/html"></object> 
 
     <div class="container">
         <div class="page-header"><h3>글쓰기</h3></div>
         
-        
-        <form action="http://localhost:8081/post/register2" method="post" enctype="application/x-www-form-urlencoded">
+        <form id="postForm">
             <div class="form-group">
                 <label for="title">제목</label>
                 <input type="text" class = "form-control" id="title" name="title">
@@ -31,6 +37,25 @@
         
         
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById("postForm").addEventListener('submit',
+            async function(event) {
+                event.preventDefault();
+
+                const title = document.getElementById('title').value;
+                const contents = document.getElementById('contents').value;
+                try {
+                    const response = await axios.post('http://localhost:8081/post/register1',
+                        {title, contents}
+                    )
+                    console.log(response.data);
+                } catch(e) {
+                    console.log(e);
+                }
+            }
+        )
+    </script>
 
     
 </body>

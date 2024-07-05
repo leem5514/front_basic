@@ -10,7 +10,8 @@
     <script>
         // $(document).ready : DOM 객체가 완전히 로드된 이후 코드 실행한다는 의미
         
-        $(document).ready(function() {
+        $(document).ready(function() { // documnet.ready => 비동기적 실행
+            // 하지만  내부함수 자체는 동기적으로 실행
             $.ajax({
                 url: "https://jsonplaceholder.typicode.com/posts/1",
                 type : 'GET',
@@ -23,7 +24,8 @@
                 }
 
             })
-        })
+        });
+
         console.log("hello world");
     </script>
 </body>

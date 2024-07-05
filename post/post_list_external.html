@@ -20,9 +20,10 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>userId</th>
                     <th>id</th>
                     <th>title</th>
-                    <th>contents</th>
+                    <th>body</th>
                 </tr>
             </thead>
             <tbody id = "target"></tbody>
@@ -33,13 +34,13 @@
     <script>
         async function postApi2() {
             try {
-                const response2 = await axios.get("http://localhost:8081/post/list");
+                const response2 = await axios.get("https://jsonplaceholder.typicode.com/posts/");
                 //console.log(response2.data);
                 const arr = response2.data; 
                 let myTarget = document.getElementById("target");
                 
                 arr.forEach(element => {
-                    myTarget.innerHTML += `<tr><td>${element.id}</td><td>${element.title}</td><td>${element.contents}</td></tr>`;
+                    myTarget.innerHTML += `<tr><td>${element.userId}</td><td>${element.id}</td><td>${element.title}</td><td>${element.body}</td></tr>`;
                 }); 
 
                 // for(let i = 0 ; i < arr.length; i++) {

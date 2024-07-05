@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        // async_await을 통해서 비동기 중 동기성을 보장 시켜줌  // async=> 비동기임 선언, await => 대기
+        async function callBackHell(){
+            const response1 = await $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts/1",
+                type : 'GET',
+                dataType:'json',
+                success : function(a) {
+                    console.log("a : " +a);
+                }, error: function(){}
+
+            });
+            const response2 = await $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts/1",
+                type : 'GET',
+                dataType:'json',
+                success : function(b) {
+                    console.log("b : " +b);
+                }, error: function(){}
+            });
+            const response3 = await $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts/1",
+                type : 'GET',
+                dataType:'json',
+                success : function(c) {
+                    console.log("c : " +c);
+                }, error: function(){}
+            });
+            
+        }
+        callBackHell();
+        console.log('hello world');
+    </script>
+</body>
+</html>

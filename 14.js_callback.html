@@ -19,6 +19,7 @@
         function callBackFunction1() {
             userInput((n) => {alert(n + " 님 안녕하세요!")});
         }
+        
         function callBackFunction2() {
             const numbers = [1,2,3,4,5];
             // callback함수의 일종
@@ -29,7 +30,7 @@
         function callBackFunction3() {
             // setTimeOut : 대표적 js의 비동기 함수 중 하나 (+ 콜백함수 처리 함수)
             // 2초 뒤에 콜백함수 실행하라는 의미
-            setTimeout(()=>console.log("hello world1"), 2000); // 비동기 이기 때문에 1, 3 보장x
+            setTimeout(()=>console.log("hello world1"), 2000); // 비동기 이기 때문에 1, 3 보장x (둘 중 확신적 시간 우선권이 없음)
             console.log("hello world2");
             setTimeout(()=>console.log("hello world3"), 2000);
             console.log("hello world4");
