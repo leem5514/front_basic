@@ -48,20 +48,19 @@
                     const name = document.getElementById('name').value;
                     const email = document.getElementById('email').value;
                     const password =  document.getElementById('password').value;
-                    
+                
                     const formData = new FormData();
                     formData.append('name', name)
                     formData.append('email', email);
                     formData.append('password', password);
                     try{
                         const response = await axios.post('http://localhost:8081/author/register2', formData);
-                        
                     } catch(e) {
                         console.log(e.message);
                     }
                     
                 }
-            )
+            );
         </script>
         
         
